@@ -1,0 +1,74 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 340
+  ClientWidth = 210
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Circle1: TCircle
+    Fill.Kind = Gradient
+    Fill.Gradient.Points = <
+      item
+        Color = xFFDF2929
+        Offset = 0.124223604798317000
+      end
+      item
+        Color = xFF00E5FF
+        Offset = 0.996894419193267800
+      end>
+    Fill.Gradient.StartPosition.X = 0.500000000000000000
+    Fill.Gradient.StartPosition.Y = 1.000000000000000000
+    Fill.Gradient.StopPosition.X = 0.499999970197677600
+    Fill.Gradient.StopPosition.Y = 0.000000000000000000
+    Position.X = 8.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFF00847F
+    Stroke.Thickness = 10.000000000000000000
+    Stroke.Dash = Dot
+    object FloatAnimation1: TFloatAnimation
+      Duration = 10.000000000000000000
+      OnProcess = FloatAnimation1Process
+      PropertyName = 'RotationAngle'
+      StartValue = 0.000000000000000000
+      StopValue = 360.000000000000000000
+    end
+  end
+  object btn_play: TButton
+    Cursor = crHandPoint
+    Enabled = False
+    Position.X = 72.000000000000000000
+    Position.Y = 200.000000000000000000
+    Scale.X = 1.500000000000000000
+    Scale.Y = 1.500000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'playtoolbutton'
+    TabOrder = 0
+    Text = 'btn_play'
+    OnClick = btn_playClick
+  end
+  object txt_duracao: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 48.000000000000000000
+    Position.Y = 288.000000000000000000
+    OnKeyUp = txt_duracaoKeyUp
+  end
+  object lb_duracao: TLabel
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 64.000000000000000000
+    Position.Y = 264.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Showcard Gothic'
+    Text = 'Dura'#231#227'o'
+    TabOrder = 2
+  end
+end

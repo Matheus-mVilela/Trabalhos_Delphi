@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CDC65A4A-11B9-4729-9967-27157FBE04C3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="U_form.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="formmask.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="U_form">
+        <MSBuild Projects="U_form.dproj"/>
+    </Target>
+    <Target Name="U_form:Clean">
+        <MSBuild Projects="U_form.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="U_form:Make">
+        <MSBuild Projects="U_form.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="formmask">
+        <MSBuild Projects="formmask.dproj"/>
+    </Target>
+    <Target Name="formmask:Clean">
+        <MSBuild Projects="formmask.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="formmask:Make">
+        <MSBuild Projects="formmask.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="U_form;formmask"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="U_form:Clean;formmask:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="U_form:Make;formmask:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
